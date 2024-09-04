@@ -1,2 +1,2 @@
 # Kol-H.github.io
-My personal website
+My GitHub pages site
