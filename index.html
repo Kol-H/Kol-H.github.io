@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <ul>
+            <li><a href="csc-372-hw/Assignment1/index.html">Assignment 1</a></li>
+            <li><a href="#">Assignment 2</a></li>
+            <li><a href="#">Assignment 3</a></li>
+        </ul>
+        <script>
+            window.addEventListener ("DOMContentLoaded", function (){
+                var links = document.getElementsByTagName("a");
+                for (var i = 0; i < links.length; i++) {
+                    if (links[i].getAttribute("href") == "#") {
+                        links[i].style.color = "gray";
+                        links[i].style.pointerEvents = "none";
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>
