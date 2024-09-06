@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home</title>
+        <link rel="icon" type="image/x-icon" href="pie_icon.gif">
+        <link rel="stylesheet" href="index.css"/>
+    </head>
+    <body>
+        <header>
+            <img src="pie_icon.gif"/>
+            <div class="pageTitle"><h1>Kol's Homepage</h1></div>
+            <img/>  <!--counter-balance for pie img-->
+        </header>
+        <div class="main">
+            <p>click here for a <a href="pie.html">pie recipe</a>!</p>
+            <div>
+                <button id="clickme">Click me!</button>
+                <label id="clicklbl">Why are you clicking me?</label>
+            </div>
+        </div>
+        <footer>
+            <p>The button has been clicked <b id="numclicks">0</b> times.</p>
+        </footer>
+    <script>
+        var numclicks = 0;
+        var clicklbl = document.getElementById("clicklbl");
+        document.getElementById("clickme").addEventListener("click", function () {
+            numclicks++;
+            document.getElementById("numclicks").textContent = numclicks;
+            if (numclicks == 1)
+                clicklbl.style.color = "unset";
+            else if (numclicks == 2) 
+                clicklbl.textContent="Please stop that.";
+            else if (numclicks > 5 && numclicks % 3 == 0) {
+                alert("STOP IT");
+                document.getElementById("clickme").disabled = true;
+                setTimeout(function(){
+                    document.getElementById("clickme").disabled = false;
+                },1000*numclicks/2);
+            }
+            else
+                if (clicklbl.textContent=="Ouch")
+                    clicklbl.textContent="Owie";
+                else
+                    clicklbl.textContent="Ouch";
+        });
+    </script></body>
+    
+</html>
