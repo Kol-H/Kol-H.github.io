@@ -11,7 +11,6 @@ for (var i = 0; i < 3; i++) {
     var restDesc = document.createElement("p");
     var aside = document.createElement("aside");
     var dishes = document.createElement("div");
-    var dishName = document.createElement("h3");
     var dishDesc = document.createElement("div");
 
     establishment.classList.add("establishment");
@@ -57,7 +56,8 @@ function showHideDesc(event) {
         });
         dish.style["height"] = (imgSize * 2) + "px";
         dish.style["width"] = (imgSize * 2) + "px";
-        desc.innerHTML = dish.textContent;
+
+        desc.innerHTML = "<h3>" + dish.alt + "</h3>" + dish.textContent;
         desc.style.display = "block";
     }
     else {

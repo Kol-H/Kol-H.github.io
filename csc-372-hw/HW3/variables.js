@@ -17,7 +17,7 @@ var restLinks = [
 
 var itemNames = [   ["Katsu Chicken", "Ramen Bowl", "Onigiri Rice Balls"],
                     ["Garlic Knots", "Spaghetti with Meatballs", "Cheese Pizza"],
-                    ["Hush Puppies", "Route 66", "Hot Fudge Brownie for two"]
+                    ["Hush Puppies", "Route 66 Burger", "Hot Fudge Brownie for two"]
                 ];
 var itemImgs =  [   
                     [

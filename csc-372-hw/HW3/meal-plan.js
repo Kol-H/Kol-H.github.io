@@ -2,6 +2,7 @@ var dishSelect = document.getElementById("dish-select");
 var dishSelection = document.getElementById("dish-selection");
 var totalCost = document.getElementById("total-cost");
 
+// create dish imgs
 for (var i = 0; i < 3; i++) {
     var dishes = document.createElement("div");
     dishes.classList.add("dishes");
@@ -10,14 +11,14 @@ for (var i = 0; i < 3; i++) {
         var dish = document.createElement("img");
         dish.classList.add("dish");
         dish.src = itemImgs[i][j];
-        dish.alt = itemNames[i][j] + " $" + itemCosts[i][j].toFixed(2);
-        //dish.addEventListener("hover", showAlt);
+        dish.title = itemNames[i][j] + "\n$" + itemCosts[i][j].toFixed(2);
         dish.addEventListener("click", addToPlan);
         dishes.appendChild(dish);
     }
     dishSelect.appendChild(dishes);
 }
 
+// add clicked dish to selection
 function addToPlan(event) {
     var dish = event.currentTarget;
     var selectedDish = document.createElement("div");
@@ -35,7 +36,7 @@ function addToPlan(event) {
     var addLess = document.createElement("button");
     addMore.classList.add("more-less-rem");
     addLess.classList.add("more-less-rem");
-    var split = dish.alt.indexOf("$");
+    var split = dish.title.indexOf("$");
 
     addLess.textContent = "-";
     addMore.textContent = "+";
@@ -47,8 +48,8 @@ function addToPlan(event) {
     addMoreLess.append(quantity);
     addMoreLess.append(addMore);
 
-    dishName.textContent = dish.alt.substring(0, split);
-    dishCost.textContent = dish.alt.substring(split + 1);
+    dishName.textContent = dish.title.substring(0, split);
+    dishCost.textContent = dish.title.substring(split + 1);
 
     selectedDish.appendChild(dishName);
     selectedDish.appendChild(addMoreLess);
