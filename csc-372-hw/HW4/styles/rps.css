@@ -1,0 +1,43 @@
+body{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width:99%;
+    margin-block:0;
+}
+div{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:5px;
+    margin-block:10px;
+    width:fit-content;
+    border: 1px solid;
+    border-radius: 8px;
+
+}
+#play-again {
+    width:40%;
+    height: 50px;
+    font-size: large;
+    font-weight: bold;
+    margin-top: 50px;
+    padding:20px;
+}
+img{
+    outline-offset: 3px;
+    border:1.5px solid;
+    border-radius:5px;
+    margin:5px;
+}
+#scores {
+    align-self: flex-start;
+    border: none;
+    margin-top:0
+}
+#reset {
+    align-self: flex-start;
+    margin-bottom: 0;
+    margin-left: 5px;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="styles/rps.css">
+        <script src="scripts/rps.js" defer></script>
+    </head>
+    <body>
+        <h2>ROCK PAPER SCISSORS</h2>
+        <div>
+            <!-- user -->
+            <img id="rock" alt="rock" title="rock" src="images/rock.PNG">
+            <img id="paper" alt="paper" title="paper" src="images/paper.PNG">
+            <img id="scissors" alt="scissors" title="scissors" src="images/scissors.PNG">
+        </div>
+
+        <div>
+            <!-- computer -->
+             <img id="computer-choice" class="disabled" alt="computer choice" src="images/question-mark.PNG">
+
+        </div>
+
+        <div id="play-again">
+            <!-- results & play again -->
+            <label id="play-results">Results: </label>
+            <button id="play">Play</button>
+        </div>
+        <button id="reset">Reset</button>
+        <div id="scores">
+            Total wins: 0
+            <br>
+            Total losses: 0
+            <br>
+            Total ties: 0
+        </div>
+
+    </body>
+</html>
