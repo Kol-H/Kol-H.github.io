@@ -10,7 +10,8 @@ https://pixnio.com/free-images/2017/09/14/2017-09-14-06-10-06-1100x733.jpg
     --border: #473823;
     --lightest: #f7f8ef;
     --highlight: color-mix(in srgb, yellow, transparent 30%);
-    --shadow: color-mix(in srgb, var(--body), var(--border) 50%);
+    --body-dark: color-mix(in srgb, var(--body), black 5%);
+    --shadow: color-mix(in srgb, var(--body), black 50%);
 }
 
 

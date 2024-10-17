@@ -1,0 +1,132 @@
+/* product-edit */
+form {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--body-dark);
+    box-shadow:inset 0px 0px 4px var(--shadow);
+    width: fit-content;
+    align-items: flex-start;
+    padding:10px 20px;
+    margin-inline:auto;
+    margin-block:10px;
+}label{
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+button[type="submit"] {
+    padding:10px;
+    align-self: center;
+    margin-top: 40px;
+    color: var(--text)
+}
+textarea {
+    min-height: 150px;
+    width: 100%;
+    background-color: color-mix(in srgb, beige, var(--shadow) 10%);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    font-size: 12px;
+    vertical-align: middle;
+    box-shadow: inset 1px 1.5px 0px color-mix(in srgb, beige, var(--shadow) 30%);
+}textarea:focus {
+    outline: 2px solid var(--highlight);
+}
+input[type="number"] {
+    background-color: color-mix(in srgb, beige, var(--shadow) 10%);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    width: 80px;
+    height: 16px;
+    font-size: 12px;
+    vertical-align: middle;
+    box-shadow: inset 1px 1.5px 0px color-mix(in srgb, beige, var(--shadow) 30%);
+} input:focus {
+    outline: 2px solid var(--highlight);
+}select{
+    background-color: color-mix(in srgb, beige, var(--shadow) 10%);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    font-size: 12px;
+    vertical-align: middle;
+    box-shadow: inset 1px 1.5px 0px color-mix(in srgb, beige, var(--shadow) 30%);
+}select:focus {
+    outline: 2px solid var(--highlight);
+}
+
+
+
+/* admin-products */
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin: auto;
+}
+th{
+    text-align: center;
+    padding:5px;
+}
+td {
+    padding:5px;
+    word-wrap: break-word;
+    text-align: left;
+}
+td button {
+    margin-block: 5px;
+    padding: 5px;
+}
+
+
+
+
+/* admin-upload */
+#uploadList{
+    align-items: center;
+}
+#uploadDesc, #uploadExample {
+    padding:10px
+}
+#uploadDesc {
+    width:400px;
+    margin-left:auto;
+    text-align: center;
+}
+#uploadExample {
+    margin-right:auto;
+    background-color: beige;
+    padding-block: 5px;
+    border:1px solid;
+    text-align: left;
+    height:fit-content
+}ul{
+    width:fit-content;
+    margin-inline: auto;
+    text-align: left;
+}
+
+
+
+/* admin-nav */
+#admin-navs {
+    width: 100% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:2%;
+}
+.admin-nav {
+    display: flex;
+    flex-direction: column;
+    margin: 0 15px 40px 15px;
+    height: 100px;
+    width: 40%;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: beige;
+    box-shadow: 1px 2px 2px var(--shadow);
+}
+#addNewProduct {
+    padding:5px;
+    float: right;
+    display:block;
+    margin:5px;
+}

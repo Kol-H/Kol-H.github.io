@@ -68,7 +68,7 @@
     flex-direction: column;
     align-items: flex-start;
     box-shadow:inset 0px 0px 4px var(--shadow);
-    background-color: color-mix(in srgb, var(--body), black 5%);
+    background-color: var(--body-dark);
 }
 #product-related p, #product-upsell p {
     margin: 0;
