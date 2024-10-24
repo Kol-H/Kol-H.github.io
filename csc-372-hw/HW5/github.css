@@ -5,6 +5,8 @@ main{
     justify-content: center;
 }
 .card {
+    max-width: 300px;
+    height: fit-content;
     border: 2px solid;
     margin: 15px;
     padding:10px;
@@ -39,9 +41,8 @@ ul {
     display: flex;
     margin-inline:auto;
     margin-bottom:0;
-    
-}.languages li {
-    margin-inline:auto;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 

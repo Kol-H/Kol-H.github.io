@@ -16,10 +16,6 @@
  */
 var main = document.getElementsByTagName("main")[0];
 
-var ghub = document.createElement("img");
-ghub.src = "github.svg";
-
-
 // get all repos from username
 const getRepos = async (username) => {
     try {
@@ -99,6 +95,9 @@ function createCards(username) {
                     var title = document.createElement("h2");
                     var desc = document.createElement("p");
 
+                    var ghub = document.createElement("img");
+                    ghub.src = "github.svg";
+
                     var cucw = document.createElement("ul"); //created/updated/commits
                     var created = document.createElement("li");
                     var updated = document.createElement("li");
@@ -107,15 +106,16 @@ function createCards(username) {
 
                     var languages = document.createElement("ul"); //make this horizontal
                     languages.classList.add("languages");
-                    var lang = document.createElement("li");
+                    
 
-                    title.value = repos[i].name;
-                    desc.value = repos[i].description;
+                    title.innerText = repos[i].name;
+                    desc.innerText = repos[i].description;
                     created.innerHTML = "<b>Created:</b> " + repos[i].created_at;
                     updated.innerHTML = "<b>Updated:</b> " + repos[i].updated_at;
                     commits.innerHTML = "<b>Commits:</b> " + repos[i].commits_count;
                     watchers.innerHTML = "<b>Watchers:</b> " + repos[i].watchers_count;
                     for (var j = 0; j < Object.keys(repos[i].languages).length; j++) {
+                        var lang = document.createElement("li");
                         lang.innerText = Object.keys(repos[i].languages)[j];
                         languages.appendChild(lang);
                     }
@@ -146,5 +146,6 @@ createCards("Kol-H");
 var search = document.getElementById("search");
 var user = document.getElementById("username");
 search.addEventListener("click", function() {
+    main.innerHTML = "";
     createCards(user.value);
 })
