@@ -1,0 +1,73 @@
+<%- include('./partials/head') %>
+<link rel="stylesheet" href="../../styles/cart.css" type="text/css" />
+<script src="../../scripts/cart.js" type="application/javascript"></script>
+</head>
+
+<body>
+    <%- include('./partials/nav') %>
+    <main>
+        
+        <section id="cart-list">
+            <h3>Your Cart:</h3>
+            <div id="product-container">
+                <% let subtotal = 0; %>
+                <% products.forEach((product)=> { %>
+                <div class="product">
+                    
+                    <img src="<%= product.img_url %>"/>
+                    <div class="name-price">
+                        <a href="details.html"><h2><%= product.product_name %></h2></a>
+                        <div class="cost-and-quantity">
+                            <p class="product-cost"><%= product.price %></p>
+                            <form class="quantity-grp">
+                                <input type="number" class="cartid" name="cartID" value="<%= product.cartID %>" hidden/>
+                                <input type="number" class="productid" name="productID" value="<%= product.productID %>" hidden/>
+                                <button type="button" class="dec">-</button><input type="text" name="quantity" class="quantity" value="<%= product.quantity %>"/><button type="button" class="inc">+</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="total-and-trash">
+                        <button class="remove">Remove</button>
+                        <h4 class="total-product-cost"><%= (product.price * product.quantity).toFixed(2) %></h4>
+                        <% subtotal += (product.price * product.quantity); %>
+                    </div>
+                </div>
+                <% }) %>
+
+            </div>
+        </section>
+
+
+        <section id="checkout">
+            <table class="subtotal">
+                <tbody>
+                    <tr>
+                        <th scope="row">Subtotal:</th>
+                        <% subtotal = subtotal.toFixed(2); %>
+                        <td>$<%= subtotal %></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Shipping:</th>
+                        <td>FREE</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Estimated Sales Tax:</th>
+                        <% let tax = (subtotal * 0.07).toFixed(2) %>
+                        <td>$<%= tax %></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Estimated total:</th>
+                        <% let total = (Number(subtotal) + Number(tax)).toFixed(2); %>
+                        <td id="total">$<%= total %></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button id="proceedToPay">Proceed to Checkout</button>
+        </section>
+
+    </main>
+    <footer>
+        Copyright &#169 2024 BROADLEAF Co.
+    </footer>
+</body>
+</html>

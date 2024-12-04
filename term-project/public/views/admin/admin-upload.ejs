@@ -1,0 +1,75 @@
+<%- include('./partials/head') %>
+<script src="../../scripts/admin-upload.js" defer></script>
+
+</head>
+
+<body>
+    <%- include('./partials/nav') %>
+    <main>
+        <h2>New Products</h2>
+        <br>
+        <div class="row">
+            <button id="newBtn">Create new</button>
+            <button id="batchBtn">Batch upload</button>
+        </div>
+
+        <div id="createNew">
+            <form id="newProduct">
+                <label for="productName">Product name:</label>
+                <input type="text" id="productname" name="productName" />
+
+                <label for="description">Description:</label>
+                <input type="text" id="description" name="description" />
+
+                <label for="img-url">Image URL:</label>
+                <input type="text" id="img-url" name="imgUrl" />
+
+                <label for="price">Price:</label>
+                <input type="number" id="price" name="price" step="0.01" />
+
+                <label for="category">Category:</label>
+                <select id="category" name="category">
+                    <option id="trees" value="1">Trees</option>
+                    <option id="tools" value="2">Tools</option>
+                    <option id="soils" value="3">Soils</option>
+                </select>
+
+                <button type="submit" id="newSubmit">Create New</button>
+            </form>
+        </div>
+
+        <div id="batchUpload" class="row">
+            <section id="uploadDesc">
+                <p>
+                    Please upload files with comma-deliminated values. An example is included on the right. <br>
+                    <h4>Accepted file extensions: </h4>
+                    <ul>
+                        <li>.txt</li>
+                        <li>.docx</li>
+                        <li>.csv</li>
+                    </ul>
+                </p>
+                <form id="uploadList">
+                    <input type="file">
+                    <button type="submit" id="batchSubmit">Upload</button>
+                </form>
+            </section>
+            <section id="uploadExample">
+                <h4>Example file format </h4>
+                name, description, price, category, img path
+                <p>
+                    "Big Tree", "This tree is big and has many leaves", 12.34, "trees", "../../images/bigtree.jpg" <br>
+                    "Little Tree", "This tree is small, but bushy", 19.99, "trees", "../../images/littletree.jpg" <br>
+                    "Soil", "hmm yes this is dirt.", 1.44, "soil", "../../images/soil.png" <br>
+                    "Hammer", "It's hammer time!", 19.90, "tools", "../../images/hammer.gif" <br>
+                    "Shovel", "It's a shovel, what do you expect?", 4.99, "tools", "../../images/shovel.jpg" <br>
+                </p>
+            </section>
+        </div>
+        
+    </main>
+    <footer>
+        Copyright &#169 2024 BROADLEAF Co.
+    </footer>
+</body>
+</html>

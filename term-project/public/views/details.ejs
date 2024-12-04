@@ -1,0 +1,106 @@
+<%- include('./partials/head') %>
+<link rel="stylesheet" href="../../styles/details.css" type="text/css" />
+<script src="../../scripts/details.js" type="application/javascript" defer ></script>
+</head>
+
+<body>
+    <%- include('./partials/nav') %>
+    <main>
+        <div class="row">
+            <section id="product-images">
+                <img id="product-img" src="<%= product.img_url %>"/>
+            </section>
+            <section id="product-details">
+                <h1><%= product.product_name %></h1>
+                <p><%= product.description %></p>
+                <h5>Price: $<%= product.price %>/ea.</h5>
+                <div id="cart-quantity">
+                    <aside>
+                        <form id="addProduct" class="quantity-grp">
+                            <input type="text" name="productID" value="<%= product.productID %>" hidden />
+                            <button class="dec" type="button">-</button><input id="quantity" name="quantity" type="text" value="1" min="1"/><button class="inc" type="button">+</button>
+                            <abbr title="Add to Cart"><button id="addToCart">&#128722;</button></abbr>
+                        </form>
+                        <div>
+                            Increase/decrease by:
+                            <input id="addBy1" type="radio" name="addBy" value="1" checked="checked"><label for="addBy1">1</label>
+                            <input id="addBy5" type="radio" name="addBy" value="5"><label for="addBy5">5</label>
+                            <input id="addBy100" type="radio" name="addBy" value="100"><label for="addBy100">100</label>
+                        </div>
+                    </aside>
+                </div>
+            </section>
+        </div>
+        <div class="row" id="product-upsell">
+            <p>
+                Some items to help you get planted! 
+                <!--
+                    (trees) recommend [tools, soils]
+                    (soil) These trees <em>love</em> this soil: recommend [trees]
+                    (tools) Here's some trees you shouldn't leaf without: recommend [trees]
+                -->
+            </p>
+            <div class="row">
+                <div class="product related-product">
+                    <img class="related-img" src="https://www.publicdomainpictures.net/pictures/50000/velka/tree-1373183306l0d.jpg"/>
+                    <a href="details.html"><h4>Product Name</h4></a>
+                    <h6>$420.69</h6>
+                </div>
+                <div class="product related-product">
+                    <img class="related-img" src="https://www.publicdomainpictures.net/pictures/50000/velka/tree-1373183306l0d.jpg"/>
+                    <a href="details.html"><h4>Product Name</h4></a>
+                    <h6>$420.69</h6>
+                </div>
+                <div class="product related-product">
+                    <img class="related-img" src="https://www.publicdomainpictures.net/pictures/50000/velka/tree-1373183306l0d.jpg"/>
+                    <a href="details.html"><h4>Product Name</h4></a>
+                    <h6>$420.69</h6>
+                </div>
+                <div class="product related-product">
+                    <img class="related-img" src="https://www.publicdomainpictures.net/pictures/50000/velka/tree-1373183306l0d.jpg"/>
+                    <a href="details.html"><h4>Product Name</h4></a>
+                    <h6>$420.69</h6>
+                </div>
+            </div>
+        </div>    
+        <div class="row" id="product-related">
+            <p>Related products:</p>
+            <div class="row">
+                <div class="product related-product">
+                    <img class="related-img" src="https://www.publicdomainpictures.net/pictures/50000/velka/tree-1373183306l0d.jpg"/>
+                    <a href="details.html"><h4>Product Name</h4></a>
+                    <h6>$420.69</h6>
+                </div>
+                <div class="product related-product">
+                    <img class="related-img" src="https://www.publicdomainpictures.net/pictures/50000/velka/tree-1373183306l0d.jpg"/>
+                    <a href="details.html"><h4>Product Name</h4></a>
+                    <h6>$420.69</h6>
+                </div>
+                <div class="product related-product">
+                    <img class="related-img" src="https://www.publicdomainpictures.net/pictures/50000/velka/tree-1373183306l0d.jpg"/>
+                    <a href="details.html"><h4>Product Name</h4></a>
+                    <h6>$420.69</h6>
+                </div>
+                <div class="product related-product">
+                    <img class="related-img" src="https://www.publicdomainpictures.net/pictures/50000/velka/tree-1373183306l0d.jpg"/>
+                    <a href="details.html"><h4>Product Name</h4></a>
+                    <h6>$420.69</h6>
+                </div>
+                <div class="product related-product">
+                    <img class="related-img" src="https://www.publicdomainpictures.net/pictures/50000/velka/tree-1373183306l0d.jpg"/>
+                    <a href="details.html"><h4>Product Name</h4></a>
+                    <h6>$420.69</h6>
+                </div>
+                <div class="product related-product">
+                    <img class="related-img" src="https://www.publicdomainpictures.net/pictures/50000/velka/tree-1373183306l0d.jpg"/>
+                    <a href="details.html"><h4>Product Name</h4></a>
+                    <h6>$420.69</h6>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        Copyright &#169 2024 BROADLEAF Co.
+    </footer>
+</body>
+</html>

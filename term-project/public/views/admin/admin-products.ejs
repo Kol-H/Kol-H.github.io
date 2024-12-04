@@ -1,0 +1,46 @@
+<%- include('./partials/head') %>
+</head>
+
+<body>
+    <%- include('./partials/nav') %>
+    <main>
+        <h2>Products</h2>
+        <br>
+        <button id="addNewProduct" name="upload" class="nav">New Product</button>
+        <br><br>
+        <table id="all-products">
+            <thead>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Img path</th>
+                <th></th><!--buttons col-->
+            </thead>
+            <tbody>
+                <% products.forEach((product)=> { %>
+                <tr>
+                    <td><%= product.productID %></td>
+                    <td><%= product.product_name %></td>
+                    <td>
+                        <%= product.description %>
+                    </td>
+                    <td><%= product.categoryID %></td>
+                    <td><%= product.price %></td>
+                    <td><%= product.img_url %></td>
+                    <td>
+                        <button class="edit" name="<%= product.productID %>">Edit</button>
+                        <br>
+                        <button class="delete" name="<%= product.productID %>">Delete</button>
+                    </td>
+                </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </main>
+    <footer>
+        Copyright &#169 2024 BROADLEAF Co.
+    </footer>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<header>
+    <div class="row">
+        <abbr title="Home"><img id="logo" alt="BroadLeaf logo"
+                    src="https://openclipart.org/image/300px/svg_to_png/28727/purzen-Leaf.png" /></abbr>
+        <div class="header-item">
+            <abbr title="Checkout"><h2 id="cart">&#128722;</h2></abbr>
+            <% if(typeof user!='undefined' ){ %>
+                <li><span> <%= user.emails[0].value %></span>
+                    <a href="/auth/logout">Logout</a></li>
+                <% } else{ %>
+                    <li><a href="/auth/google">Login With Google</a></li>
+                    <% } %>
+            
+        </div>
+    </div>
+    <div class="row">
+        <nav>
+            <a id="treePage" name="1" class="nav">Trees</a>
+            <a id="toolPage" name="2" class="nav">Tools</a>
+            <a id="soilPage" name="3" class="nav">Soil & Fertilizer</a>
+        </nav>
+        <div id="search">
+            <input type="text" placeholder="Search..." />
+            <abbr title="Search"><button>&#127795;</button></abbr>
+        </div>
+    </div>
+</header>

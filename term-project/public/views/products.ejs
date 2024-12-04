@@ -1,0 +1,69 @@
+<%- include('./partials/head') %>
+<link rel="stylesheet" href="../../styles/products.css" type="text/css"/>
+<script src="../../scripts/product-list.js" type="application/javascript" defer></script>
+</head>
+
+<body>
+    <%- include('./partials/nav') %>
+    <main>
+        <h1>Products</h1>
+        <!--div id="filters">
+            Season
+            <div class="checkbox-group">
+                <input id="deciduous" type="checkbox"><label for="deciduous">Deciduous</label><br>
+                <input id="evergreen" type="checkbox"><label for="evergreen">Evergreen</label><br>
+            </div>
+            Size
+            <div class="checkbox-group">
+                <input id="tall" type="checkbox"><label for="tall">Tall</label><br>
+                <input id="med" type="checkbox"><label for="med">Medium</label><br>
+                <input id="short" type="checkbox"><label for="short">Short</label><br>
+            </div>
+            Edible?
+            <div class="checkbox-group">
+                <input id="edible" type="checkbox"><label for="edible">Edible</label><br>
+                <input id="ornamental" type="checkbox"><label for="ornamental">Ornamental</label><br>
+            </div>
+            <- radio buttons in n-p-k should be disabled unless there is a number in their respective number input  ->
+            Nitrogen
+            <div class="checkbox-group">
+                <input id="n" type="number"><br>
+                <input id="nAtLeast" type="radio" name="n" checked="checked"><label for="nAtLeast">At least</label><br>
+                <input id="nAtMost" type="radio" name="n"><label for="nAtMost">At most</label><br>
+                <input id="nExact" type="radio" name="n"><label for="nExact">Exactly</label><br>
+            </div>
+            Phosphorus
+            <div class="checkbox-group">
+                <input id="p" type="number"><br>
+                <input id="pAtLeast" type="radio" name="p" checked="checked"><label for="pAtLeast">At least</label><br>
+                <input id="pAtMost" type="radio" name="p"><label for="pAtMost">At most</label><br>
+                <input id="pExact" type="radio" name="p"><label for="pExact">Exactly</label><br>
+            </div>
+            Potassium
+            <div class="checkbox-group">
+                <input id="k" type="number"><br>
+                <input id="kAtLeast" type="radio" name="k" checked="checked"><label for="kAtLeast">At least</label><br>
+                <input id="kAtMost" type="radio" name="k"><label for="kAtMost">At most</label><br>
+                <input id="kExact" type="radio" name="k"><label for="kExact">Exactly</label><br>
+            </div>
+        </div>-->
+        <br>
+
+
+        <div id="product-container">
+            <% products.forEach((product)=> { %>
+                <div class="product" id="<%= product.productID %>">
+                    <img src="<%= product.img_url %>">
+                    <h2><%= product.product_name %></h2>
+                    <h5>$<%= product.price %></h5>
+                </div>
+            <% }) %>
+        </div>
+
+
+    </main>
+    <footer>
+        Copyright &#169 2024 BROADLEAF Co.
+    </footer>
+</body>
+</html>

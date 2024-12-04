@@ -1,0 +1,39 @@
+<%- include('./partials/head') %>
+<script src="../../../scripts/admin-edit.js" defer></script>
+
+</head>
+
+<body>
+    <%- include('./partials/nav') %>
+    <main>
+        <h2>Edit Product</h2>
+        <form id="editForm">
+            <h5>Product ID: <input type="hidden" name="productID" class="disabled" value="<%= product.productID %>"></input><%= product.productID %></h5>
+
+            <label for="pName">Product name:</label>
+            <input id="pName" name="product_name" type="text" placeholder="Item name" value="<%= product.product_name %>">
+
+            <label for="pDesc">Description:</label>
+            <textarea id="pDesc" name="description" type="textarea" placeholder="Description"><%= product.description %></textarea>
+            
+            <label for="pImg">Img URL:</label>
+            <input id="pImg" name="img_url" type="text" placeholder="Image URL" value="<%= product.img_url %>">
+
+            <label for="pPrice">Price:</label>
+            <input id="pPrice" name="price" type="number" placeholder="Price" value="<%= product.price %>">
+
+            <label for="categories">Category:</label>
+            <select id="categories" name="categoryID">
+                <option value="1" name="1">Trees</option>
+                <option value="2" name="2">Tools</option>
+                <option value="3" name="3">Soils/Amendments</option>
+            </select>
+            
+            <button type="submit" id="saveBtn">Save changes</button>
+        </form>
+    </main>
+    <footer>
+        Copyright &#169 2024 BROADLEAF Co.
+    </footer>
+</body>
+</html>
